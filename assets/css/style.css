@@ -2,9 +2,24 @@
 
 .logo {
     font-family: 'Monoton', cursive;
+    font-size: 30px;
 }
 
 .text {
     font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
 }
 
+nav {
+    margin-bottom: 20vh;
+}
+
+body {
+    background-image: url(../images/background.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
