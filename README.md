@@ -1,45 +1,32 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+Project Example idea 1 - WITH A TWIST ;)
+Cocktail receipe site
+Name ideas: 
+⦁	On The Rocks
+⦁	In the Spirit 
 
-Welcome AmyKeedwell,
+Project features to include:
+A homepage with an image of a well stocked bar full of spirits with my name and logo, a description of what the site is for and an option to Login or Sign up.
+Navigation bar at the top with options to view the current cocktail receipes and to Login or Register
+Registration page:
+Users will be displayed with a form to input their Email, Username and password.
+Profile page:
+Once registers, users will be redirected to the profile page with a welcome message displaying their newly created username and an option to browse receipes or add their own (I would like a feature to display any receipes that user has added on their profile too)
+Once logged in users will have:
+⦁	a 'Welcome {user}' at the top of the screen
+⦁	Display any cocktails they may have already added if an existing user
+⦁	Options to update or delete their own receipes
+⦁	The option to add a receipe
+⦁	A button to browse all receipes
+⦁	Create their own cocktails to add to the library. 
+⦁	Read their own receipes and ones added by the admin and other users.
+⦁	Update only their own receipes
+⦁	Delete only their own receipes
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Cocktail page will include the following:
+A search bar
+Premade selection of classic cocktails including an acordion of the following:
+⦁	Name
+⦁	Ingredients
+⦁	How to prepare
+⦁	Created by
 
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
