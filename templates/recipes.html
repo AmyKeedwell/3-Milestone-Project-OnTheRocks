@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+     <link rel="stylesheet" href="assets/css/style.css">
+    <title>On The Rocks!</title>
+</head>
+<body>
+<!--nav bar-->
+<nav>
+    <div class="nav-wrapper grey darken-3">
+      <a href="#!" class="brand-logo logo">On The Rocks</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="" class="nav-item">Recipes</a></li>
+        <li><a href="" class="nav-item">Log In</a></li>
+        <li><a href="" class="nav-item">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="">Recipes</a></li>
+    <li><a href="">Log In</a></li>
+    <li><a href="">Register</a></li>
+  </ul>
+
+{% for recipies in recipies %}
+    {{ recipies.cocktail_name }}<br>
+    {{ recipies.ingredients }}<br>
+    {{ recipies.method }}<br>
+{% endfor %}
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>         
+<script src="assets/js/scripts.js"></script>   
+</body>
+</html>
