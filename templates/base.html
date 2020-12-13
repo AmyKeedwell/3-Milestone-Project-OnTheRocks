@@ -14,8 +14,9 @@
 <nav>
     <div class="nav-wrapper grey darken-3">
       <a href="{{ url_for('home') }}" class="brand-logo logo">On The Rocks</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"></i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
+        <li><a href="{{ url_for('home') }}" class="nav-item">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}" class="nav-item">Recipes</a></li>
         <li><a href="{{ url_for('login') }}" class="nav-item">Log In</a></li>
         <li><a href="{{ url_for('register') }}" class="nav-item">Register</a></li>
@@ -24,6 +25,7 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
     <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
     <li><a href="{{ url_for('login') }}">Log In</a></li>
     <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -47,7 +49,8 @@
         {% endblock %}
     </main>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>         
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>  
 </body>
 </html>

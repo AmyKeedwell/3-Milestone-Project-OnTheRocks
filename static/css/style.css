@@ -14,7 +14,7 @@ nav {
     margin-bottom: 20vh;
 }
 
-body {
+.home-image {
     background-image: url(../images/background.jpeg);
     background-repeat: no-repeat;
     width: 100%;
