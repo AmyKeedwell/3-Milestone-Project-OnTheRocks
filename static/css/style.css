@@ -5,6 +5,14 @@
     font-size: 30px;
 }
 
+h2 {
+    font-family: 'Monoton', cursive;
+}
+
+.headerbckgrnd {
+    background-color: white;
+}
+
 .text {
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
@@ -14,8 +22,7 @@ nav {
     margin-bottom: 20vh;
 }
 
-.home-image {
-    background-image: url(../images/background.jpeg);
+body {background-image: url(../images/wall.jpg);
     background-repeat: no-repeat;
     width: 100%;
     height: auto;

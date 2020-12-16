@@ -5,7 +5,26 @@
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel red darken-4">
+            <div class="card-panel grey">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="fas fa-user prefix white-text"></i>
+                        <input id="first_name" name="first_name" type="text" class="validate">
+                        <label for="first_name" class="white-text">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="fas fa-user prefix white-text"></i>
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name" class="white-text">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-paper-plane prefix white-text"></i>
+                        <input id="email" name="email" type="email" class="validate">
+                        <label for="email" class="white-text">Email</label>
+                    </div>
+                </div>
                 <!--Username-->
                 <div class="row">
                     <div class="input-field col s12">
