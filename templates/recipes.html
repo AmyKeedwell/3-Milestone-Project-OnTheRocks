@@ -1,30 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center-align headerbckgrnd">View our recipes and create your own!</h2>
+<h2 class="center-align">View our recipes and create your own!</h2>
 
-    {% for recipies in recipies %}
-        {{ recipies.cocktail_name }}<br>
-        {{ recipies.ingredients }}<br>
-        {{ recipies.method }}<br>
-    {% endfor %}
 
-      <ul class="collapsible">
-        {% for recipies in recipies %}
-        <li>
-            <div class="collapsible-header grey">
-                <i class="fas fa-caret-down"></i>
-                <strong><h5>{{ recipies.cocktail_name }}</h5></strong>
-            </div>
-            <div class="collapsible-body grey lighten-1">
-                <strong><h5>Ingredients:</h5></strong><br>
-                {{ recipies.ingredients }}<br>
-                <strong>Method:</strong><br>
-                {{ recipies.method }}
-            </div>
-        </li>
+    <div class="container">
+        <div class="row col-6">
+        <ul class="collapsible">
+            {% for recipies in recipies %}
+            <li>
+                <div class="collapsible-header grey">
+                    <div class="col-9">
+                        <i class="fas fa-caret-down"></i>
+                        <strong><h5>{{ recipies.cocktail_name }}</h5></strong>
+                    </div>
+                    <div class="collapsible-body grey lighten-1">
+                        <strong><h5>Ingredients:</h5></strong><br>
+                        {{ recipies.ingredients }}<br>
+                        <strong><h5>Method:</h5></strong><br>
+                        {{ recipies.method }}
+                        <p><em>by: {{ recipies.created_by }}</em></p>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa fas-caret-down"></i>
+                    </div>
+                </div>
+            </li>
         {% endfor %}
-  </ul>
+        </ul>
+        </div>
+  </div>
         
 
 {% endblock %}

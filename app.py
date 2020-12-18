@@ -105,6 +105,23 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_cocktail", methods=["GET", "POST"])
+def add_cocktail():
+    if request.method == "POST":
+        recipies = {
+            "cocktail_name": request.form.get("cocktail_name"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "created_by": session["user"]
+        }
+
+        mongo.db.recipies.insert_one(recipies)
+        flash("New Cocktail Successfully Added!")
+        return redirect(url_for("get_recipes"))
+
+    return render_template("add_cocktail.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
