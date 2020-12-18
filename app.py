@@ -122,6 +122,12 @@ def add_cocktail():
     return render_template("add_cocktail.html")
 
 
+@app.route("/edit_recipies/<recipies_id>", methods=["GET", "POST"])
+def edit_recipe(recipies_id):
+    recipies = mongo.db.recipies.find_one({"_id": ObjectId(recipies_id)})
+
+    return render_template("edit_cocktail.html", recipies=recipies)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
