@@ -2,9 +2,8 @@
 {% block content %}
 
 
-<h2 class="center-align">Add Your Own Cocktail Recipe</h2>
-
-<div class="row card-panel grey lighten-1">
+<div class="row card-panel white">
+    <h2 class="center-align">Add Your Own Cocktail Recipe</h2>
     <form class="col s12" method="POST" action="{{ url_for('add_cocktail') }}">
         <!--add name of cocktail-->
         <div class="row">
@@ -12,7 +11,7 @@
                 <i class="fas fa-cocktail prefix"></i>
                 <textarea id="cocktail_name" name="cocktail_name" minlength="5" maxlenth="15" 
                     class="materialize-textarea validate" required></textarea>
-                <label for="cocktail_name" class="white-text">Cocktail</label>
+                <label for="cocktail_name">Cocktail</label>
             </div>  
         </div>
         <!--add cocktail ingredients -->
@@ -20,7 +19,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-list prefix"></i>
                 <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required></textarea>
-                <label for="ingredients" class="white-text">Ingredients</label>
+                <label for="ingredients">Ingredients</label>
             </div>
         </div>
         <!--add cocktail method-->
@@ -28,7 +27,7 @@
             <div class="input-field col s12">
                 <i class="fas fa-blender prefix"></i>
                 <textarea id="method" name="method" class="materialize-textarea validate" required></textarea>
-                <label for="method" class="white-text">Method</label>
+                <label for="method">Method</label>
             </div>
         </div>
         <!--submit button-->

@@ -10,9 +10,13 @@ h2 {
 }
 
 
-.text {
+.hometext {
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
+}
+
+.text {
+   font-family: 'Montserrat', sans-serif; 
 }
 
 nav {

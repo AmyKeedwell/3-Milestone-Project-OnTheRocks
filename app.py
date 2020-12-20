@@ -20,6 +20,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_recipes")
 def get_recipes():
     recipies = list(mongo.db.recipies.find())
@@ -32,10 +37,6 @@ def search():
     recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipies=recipies)
 
-
-@app.route("/home")
-def home():
-    return render_template("home.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
