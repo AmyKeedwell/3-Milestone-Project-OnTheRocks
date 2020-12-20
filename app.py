@@ -124,9 +124,28 @@ def add_cocktail():
 
 @app.route("/edit_recipies/<recipies_id>", methods=["GET", "POST"])
 def edit_recipe(recipies_id):
-    recipies = mongo.db.recipies.find_one({"_id": ObjectId(recipies_id)})
+    if request.method == "POST":
+        submit = {
+            "cocktail_name": request.form.get("cocktail_name"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "created_by": session["user"]
+        }
 
+        mongo.db.recipies.update({"_id": ObjectId(recipies_id)}, submit)
+        flash("Cocktail Successfully Edited!")
+        return redirect(url_for("get_recipes"))
+
+    recipies = mongo.db.recipies.find_one({"_id": ObjectId(recipies_id)})
     return render_template("edit_cocktail.html", recipies=recipies)
+
+
+@app.route("/delete_cocktail/<recipies_id>")
+def delete_cocktail(recipies_id):
+    mongo.db.recipies.remove({"_id": ObjectId(recipies_id)})
+    flash ("Cocktail Successfully Deleted!")
+    return redirect(url_for("get_recipes"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
