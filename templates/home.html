@@ -9,12 +9,15 @@
         <div class="col s10 offset-s1 valign">
         <div class="card grey">
             <div class="card-content white-text ">
-            <span class="card-title logo center"><h1>ON THE ROCKS</h1></span>
-            <p class="text center-align">Welcome to On The Rocks! The perfect place to find new cocktail recipes and add your own!</p>
+                <span class="card-title logo center"><h1>ON THE ROCKS</h1></span>
+                <p class="text center-align">Welcome to On The Rocks! The perfect place to find new cocktail recipes and add your own!</p>
             </div>
             <div class="card-action center">
-            <a href="{{ url_for('login') }}" class="white-text grey darken-3 waves-effect waves-light btn">Log In</a>
-            <a href="{{ url_for('register') }}" class="white-text grey darken-3 waves-effect waves-light btn">Register</a>
+                <a href="{{ url_for('get_recipes') }}" class="white-text grey darken-3 waves-effect waves-light btn">View Cocktails</a>
+            </div>
+            <div class="card-action center">
+                <a href="{{ url_for('login') }}" class="white-text grey darken-3 waves-effect waves-light btn">Log In</a>
+                <a href="{{ url_for('register') }}" class="white-text grey darken-3 waves-effect waves-light btn">Register</a>
             </div>
         </div>
         </div>
