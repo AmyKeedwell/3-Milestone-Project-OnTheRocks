@@ -26,6 +26,13 @@ def get_recipes():
     return render_template("recipes.html", recipies=recipies)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipies=recipies)
+
+
 @app.route("/home")
 def home():
     return render_template("home.html")
