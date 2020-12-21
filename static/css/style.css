@@ -48,3 +48,8 @@ body {background-image: url(../images/wall.jpg);
     margin: 5px;
     line-height: 42px;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+}
