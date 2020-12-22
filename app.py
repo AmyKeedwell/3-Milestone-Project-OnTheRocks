@@ -100,10 +100,15 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        
-        return render_template("profile.html",username=username)
-
-    return redirect(url_for("login"))
+        user = mongo.db.users.find_one({"username": session['user']})
+        recipies = mongo.db.recipies.find({"created_by": session['user']})
+        recipies = list(recipies)
+        return render_template(
+                "profile.html",
+                username=username,
+                recipies=recipies)
+    else:
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
