@@ -86,7 +86,7 @@ def login():
                 return redirect (url_for("login"))
 
         else:
-            #username doesn't exist
+            # username doesn't exist
             flash("Incorrect username and/or password")
             return redirect (url_for("login"))
 
@@ -123,6 +123,7 @@ def logout():
 def add_cocktail():
     if request.method == "POST":
         recipies = {
+            "url": request.form.get("url"),
             "cocktail_name": request.form.get("cocktail_name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),
