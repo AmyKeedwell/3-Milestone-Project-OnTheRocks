@@ -9,7 +9,7 @@
                 <h3 class="text center-align">
                     Welcome, {{ username }}!
                 </h3>
-                <p class="text center-align">View Your Cocktails or add to your collection!</p>
+                <p class="text center-align">Manage Cocktails or add to your collection!</p>
                 <h5 class="text center-align">
                     Your Cocktail Recpies:
                 </h5>
@@ -23,14 +23,18 @@
                         <br>
                         <div id="modal1" class="modal">
                             <div class="modal-content">
-                                <h4>Are you sure you want to delete?</h4>
+                                <h5 class="text center-align">Are you sure you want to delete?</h5>
                             </div>
                             <div class="modal-footer">
                                 <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
                                 <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
                             </div>
                         </div>
-                       
+                    {% else %}  
+                       <p class="text center-align">
+                           No recipes found! <br>
+                           Start your cocktail collection by clicking below.
+                        </p>
                     {% endfor %}
                     </div>
                 </div>
