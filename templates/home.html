@@ -12,13 +12,16 @@
                 <span class="card-title logo center"><h1>ON THE ROCKS</h1></span>
                 <p class="hometext center-align">Welcome to On The Rocks! The perfect place to find new cocktail recipes and add your own!</p>
             </div>
+            {% if session.user %}
             <div class="card-action center">
                 <a href="{{ url_for('get_recipes') }}" class="white-text grey darken-3 waves-effect waves-light btn">View Cocktails</a>
             </div>
+            {% else %}
             <div class="card-action center">
                 <a href="{{ url_for('login') }}" class="white-text grey darken-3 waves-effect waves-light btn">Log In</a>
                 <a href="{{ url_for('register') }}" class="white-text grey darken-3 waves-effect waves-light btn">Register</a>
             </div>
+            {% endif %}
         </div>
         </div>
     </div>
