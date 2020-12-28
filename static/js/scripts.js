@@ -14,6 +14,10 @@
     $('.datepicker').datepicker();
   });
 
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
 function initMap() {
         const bristol = { lat: 51.45347, lng: -2.58818 };
         var map = new google.maps.Map(document.getElementById("map"), {

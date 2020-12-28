@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!--search bar-->
 <div class="row card-panel">
     <h2 class="center-align">View our recipes and create your own!</h2>
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -17,9 +18,13 @@
                 </button>
             </div>
         </div>
+        <div class="card-action center">
+        <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">Create New Cocktail Recipe</a>
+        </div>
     </form>
 </div>
 
+<!--display all cocktail recipes-->
 {% if recipies|length > 0 %}
 <ul class="collapsible">
     {% for recipies in recipies %}
@@ -27,23 +32,21 @@
         <div class="collapsible-header">
             <div class="col-3">
                 <i class="fas fa-caret-down"></i>
-                {% if session.user|lower == recipies.created_by|lower %}
-                    <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
-                    <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Edit</a>
-                {% endif %}
             </div>
             <div class="col-9">
                 <strong>{{ recipies.cocktail_name }}</strong>
             </div>
         </div>
-
-
         <div class="collapsible-body white">
             <strong>Ingredients:</strong><br>
             {{ recipies.ingredients }}<br>
             <strong>Method:</strong><br>
             {{ recipies.method }}
             <p><em>by: {{ recipies.created_by }}</em></p>
+            {% if session.user|lower == recipies.created_by|lower %}
+                <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
+                <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Edit</a>
+            {% endif %}
         </div>
     </li>
     {% endfor %}
