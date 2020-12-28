@@ -37,20 +37,24 @@
                 <img class="activator" src="{{ recipies.url }}">
             </div>
         <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">
+            <span class="card-title activator grey-text text-darken-4 center-align">
                 <strong>{{ recipies.cocktail_name }}</strong>
             </span>
-            <p>Click to get recipe!</p>
+            <p class="center-align">Click to get recipe!</p>
             {% if session.user|lower == recipies.created_by|lower %}
-                <a class="btn-small white-text grey darken-3 modal-trigger" href="#modal1">Delete</a>
-                <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Edit</a>
+                <a class="btn-small red modal-trigger" href="#modal1">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+                <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small green waves-effect waves-light">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
             {% endif %}
             <div id="modal1" class="modal">
                 <div class="modal-content">
                     <h5 class="text center-align">Are you sure you want to delete?</h5>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
+                    <a href="{{ url_for('get_recipes', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
                     <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
                 </div>
             </div>
