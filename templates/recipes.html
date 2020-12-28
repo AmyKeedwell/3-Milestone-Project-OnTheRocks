@@ -29,12 +29,73 @@
 
 <!--display all cocktail recipes-->
 {% if recipies|length > 0 %}
+{% for recipies in recipies %}
 <div class="row">
-    <div class="col s12 m12">
-        <ul class="collapsible">
-            {% for recipies in recipies %}
-            <li>
-                <div class="collapsible-header">
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{ recipies.url }}">
+            </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">
+                <strong>{{ recipies.cocktail_name }}</strong>
+            </span>
+            <p>Click to get recipe!</p>
+            {% if session.user|lower == recipies.created_by|lower %}
+                <a class="btn-small white-text grey darken-3 modal-trigger" href="#modal1">Delete</a>
+                <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Edit</a>
+            {% endif %}
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h5 class="text center-align">Are you sure you want to delete?</h5>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
+                    <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><strong>{{ recipies.cocktail_name }}</strong>
+                <i class="fas fa-times right"></i>
+            </span>
+            <strong>Ingredients:</strong><br>
+                    {{ recipies.ingredients }}<br>
+                    <strong>Method:</strong><br>
+                    {{ recipies.method }}
+                    <p><em>by: {{ recipies.created_by }}</em></p>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="row">
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="">
+            <span class="card-title">
+                <strong>{{ recipies.cocktail_name }}</strong>
+            </span>
+        </div>
+        <div class="card-content">
+            <strong>Ingredients:</strong><br>
+                    {{ recipies.ingredients }}<br>
+                    <strong>Method:</strong><br>
+                    {{ recipies.method }}
+                    <p><em>by: {{ recipies.created_by }}</em></p>
+        </div>
+        <div class="card-action">
+           {% if session.user|lower == recipies.created_by|lower %}
+                <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
+                <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Edit</a>
+            {% endif %}
+        </div>
+    </div>
+  </div>-->
+
+            <!--<li>
+                <div >
                     <div class="col-3">
                         <i class="fas fa-caret-down"></i>
                     </div>
@@ -53,9 +114,9 @@
                         <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Edit</a>
                     {% endif %}
                 </div>
-            </li>
+            </li>-->
             {% endfor %}
-        </ul>
+        
     </div>
 </div>
 {% else %}
