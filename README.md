@@ -1,4 +1,30 @@
-Project Example idea 1 
+# On The Rocks 
+
+I have created a cocktail recipe site to display my skills in HTML, CSS, JavaScript and Python. My website allows users to interact with the page,
+they are able to Create, Read, Update and Delete recipes that they have added to the site. 
+
+# UX
+
+# Mock Up
+
+# User Stories
+
+# Design
+
+# Features
+## Feature left to impliment
+
+# Technologies Used
+
+# Testing
+
+# Known Bugs
+
+# Deployment
+
+# Acknowledgments
+
+
 
 Cocktail receipe site
 
