@@ -3,58 +3,53 @@
 
 
 
-    <div class="row">
-        <form class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="text center-align">
-                    Welcome, {{ username }}!
-                </h3>
-                <p class="text center-align">Manage Cocktails or add to your collection!</p>
-                <h5 class="text center-align">
-                    Your Cocktail Recipes:
-                </h5>
-                
-                  
-                
-
-
-
-                <div class="text center-align">
-                    <div class="card-panel small grey lighten-4">
-                    {% for recipies in recipies %}
-                        {{ recipies.cocktail_name }}
-                        <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small green waves-effect waves-light">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                        <a class="btn-small red modal-trigger" href="#modal1">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
-                        <br>
-                        <div id="modal1" class="modal">
-                            <div class="modal-content">
-                                <h5 class="text center-align">Are you sure you want to delete?</h5>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
-                                <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
-                            </div>
+<div class="row">
+    <form class="col s12">
+        <div class="card-panel">
+            <h3 class="text center-align">
+                Welcome, {{ username }}!
+            </h3>
+            <p class="text center-align">Manage Cocktails or add to your collection!</p>
+            <h5 class="text center-align">
+                Your Cocktail Recipes:
+            </h5>
+            {% for recipies in recipies %}
+            <div class="row">
+                <div class="col s12 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ recipies.url }}">
                         </div>
-                    {% else %}  
-                       <p class="text center-align">
-                           No recipes found! <br>
-                           Start your cocktail collection by clicking below.
-                        </p>
-                    {% endfor %}
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4 center-align text">
+                                <h6><strong>{{ recipies.cocktail_name }}</strong></h6>
+                            </span>
+                            <a class="btn-small red modal-trigger right" href="#modal1">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                            <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small green waves-effect waves-light">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="card-action center">
-                    <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">Create New Cocktail Recipe</a>
+            </div>
+            <!--modal to check before deleting an item-->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h5 class="text center-align">Are you sure you want to delete?</h5>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
+                    <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
                 </div>
             </div>
-        </form>
-    </div>
-
-               
-                
+            {% endfor %}
+            <div class="card-action center">
+                <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">Create New Cocktail Recipe</a>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
