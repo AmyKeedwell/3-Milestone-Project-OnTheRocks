@@ -74,7 +74,10 @@
 </div>
 {% endfor %}
 {% else %}
-    <h3 class="center-align red-text">No Cocktails Found!</h3>
+    <h3 class="center-align red-text text">No Cocktails Found!</h3>
+    {% if session.user %}
+        <h5 class="center-align text"> Create this Cocktail? Simply click the link above!</h5>
+        {% endif %}
 {% endif %}
         
 {% endblock %}

@@ -13,8 +13,8 @@
             <h5 class="text center-align">
                 Your Cocktail Recipes:
             </h5>
-            {% for recipies in recipies %}
             <div class="row">
+                {% for recipies in recipies %}
                 <div class="col s12 m3">
                     <div class="card">
                         <div class="card-image">
@@ -22,6 +22,7 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title grey-text text-darken-4 center-align text">
+                                
                                 <h6><strong>{{ recipies.cocktail_name }}</strong></h6>
                             </span>
                             <a class="btn-small red modal-trigger right" href="#modal1">
@@ -33,6 +34,7 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             <!--modal to check before deleting an item-->
             <div id="modal1" class="modal">
@@ -44,7 +46,6 @@
                     <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
                 </div>
             </div>
-            {% endfor %}
             <div class="card-action center">
                 <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">Create New Cocktail Recipe</a>
             </div>
