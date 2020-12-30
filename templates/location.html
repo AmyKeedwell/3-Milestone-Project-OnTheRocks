@@ -8,50 +8,22 @@
     <h3 class="text center-align">Contact Us</h3>
     <p class="center-align text">Reserve a seat in our river side bar to recieve the full table service experience!</p>
 
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-            </div>
-      </div>
+
+     <form id="contact-form" class="col s12">
+        <input type="hidden" name="contact_number">
+
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" class="validate">
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" class="validate">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="validate"></textarea>
+
+        <input type="submit" class="waves-effect waves-light btn center-align white-text grey darken-3 center" value="Make A Reservation">
     </form>
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="email" name="email" type="email" class="validate">
-            <label for="email">Email</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <select>
-            <option value="" disabled selected>How many are joining us?</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            </select>
-        </div>
-        <div class="col s6">
-            <input id="date" name="date" type="text" class="datepicker validate" required>
-            <label for="date">Date</label>
-        </div>
-    </div>
-    <div class="card-action center">
-        <a class="waves-effect waves-light btn center-align white-text grey darken-3"><i class="fas fa-glass-cheers"></i> Make A Reservation</a>
-    </div>
 </div>
-
-
-    
-
-
-
 
 
 {% endblock %}
