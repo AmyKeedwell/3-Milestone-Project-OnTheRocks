@@ -30,7 +30,7 @@
       </ul>
     </div>
   </nav>
-
+<!--mobile nav bar-->
   <ul class="sidenav" id="mobile-demo">
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
@@ -44,9 +44,8 @@
         {% endif %}
             <li><a href="{{ url_for('location') }}">Location</a></li>
   </ul>
-
+  <!--Flash messages-->
     <section>
-        <!--Flash messages-->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -57,11 +56,14 @@
             {% endif %}
         {% endwith %}
     </section>
-
+<!--templates-->
     <main class="container">
         {% block content %}
         {% endblock %}
     </main>
+<!--scroll to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
