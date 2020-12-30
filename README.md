@@ -5,18 +5,88 @@ they are able to Create, Read, Update and Delete recipes that they have added to
 
 # UX
 
+As a cocktail lover, there are always new recipes to explore. This site allows users to search for a recipe they 
+would love to try, get inspiration by searching their favourite spirit in the search bar and see what new cocktails
+they can create with what they have in the house!
+
+- to view user created cocktails
+- to read the ingredients needed for each recipe
+- to read the method used to make each recipe
+- to see which user created this recipe
+- to register an account
+- to log in as an existing user
+- to log out of their account
+- to view their profile page including a list of recipes they have added (if any)
+- to allow users to edit or delete recipes they have added
+- to contact us to make a reservation
+- to find the location of the bar with the google maps to visit us
+
+## User Stories
+First Time Visitor Goals
+
+Frequent Visitor Goals
+
+Developer Goals
+- Demonstrate a solid understanding of MongoDB, Heroku and Python
+- Build an inviting, clean and useful cocktail recipe website
+- Make the site easy to use and navigate which provides a positive experience
+- Build up portfolio
+
+Website Owner Goals
+- Have an easy-to-use site that encourages users to interact with it
+
 # Mock Up
 
-# User Stories
+Add figma wire frame
 
 # Design
+Colour Scheme
+
+Typography
+
+Icons
+
+Images
 
 # Features
+- Home page displaying images and information on the sites purpose.
+- User sign up functionality.
+- Sign in / Sign out functionality.
+- Cocktail recipe page that displays all recipes on the site by all users
+- Create cocktail page allowing signed in users to create cocktail recipes.
+- Edit cocktail page allowing signed in users to edit any cocktails they have added.
+- Delete cocktail function to allow signe in uers to delete any cocktails they have added.
+- Profile page showing any cocktails created by the user.
+- Location page with API map and form with EmailJS functionality to contact the bar. 
+- Mobile responsive design.
+
+
 ## Feature left to impliment
+Admin login will be implemented in the next release to allow admin users to delete any events that may be inappropriate.
 
 # Technologies Used
+- HTML
+- CSS 
+- JavaScript
+- Python
+- MongoDB
+- Github
+- Git
+- Materialize
+- Google fonts
+- Chrome developer tools
+- Font Awesome
+- Heroku
+- Figma
 
 # Testing
+HTML  W3C HTML Validator.
+
+CSS  W3C CSS Validator.
+
+JavaScript  JSHint Validator.
+
+Python  PEP8 Validator.
 
 # Known Bugs
 

@@ -38,7 +38,6 @@ def search():
     return render_template("recipes.html", recipies=recipies)
 
 
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
