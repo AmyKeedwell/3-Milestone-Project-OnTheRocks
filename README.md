@@ -88,6 +88,10 @@ JavaScript  JSHint Validator.
 
 Python  PEP8 Validator.
 
+Delete Button - deleting random recipes rather than the specific card it relates to - this was picked up via peer review as another student tested
+my site to add their own recipes etc and when trying to then remove what they added - it deleted my other recipes.
+When i remove the modal to check if you want to delete, the button works fine, altho it is using the same code!
+
 # Known Bugs
 
 # Deployment
