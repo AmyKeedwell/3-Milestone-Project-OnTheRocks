@@ -25,7 +25,10 @@
                                 
                                 <h6><strong>{{ recipies.cocktail_name }}</strong></h6>
                             </span>
-                            <a class="btn-small red modal-trigger right" href="#modal1">
+                            <!--<a class="btn-small red modal-trigger right" href="#modal1">
+                                <i class="far fa-trash-alt"></i>
+                            </a>-->
+                            <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text waves-effect waves-light red right">
                                 <i class="far fa-trash-alt"></i>
                             </a>
                             <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small green waves-effect waves-light">
@@ -37,7 +40,7 @@
                 {% endfor %}
             </div>
             <!--modal to check before deleting an item-->
-            <div id="modal1" class="modal">
+            <!--<div id="modal1" class="modal">
                 <div class="modal-content">
                     <h5 class="text center-align">Are you sure you want to delete?</h5>
                 </div>
@@ -45,7 +48,7 @@
                     <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
                     <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
                 </div>
-            </div>
+            </div>-->
             <div class="card-action center">
                 <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">Create New Cocktail Recipe</a>
             </div>

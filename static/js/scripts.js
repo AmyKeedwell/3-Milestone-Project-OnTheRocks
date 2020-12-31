@@ -1,32 +1,22 @@
+ /* sidenav functionality */
+ 
  $(document).ready(function(){
      $('.sidenav').sidenav({edge: "right"});
   });
 
-
- $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-
-
- $(document).ready(function(){
-    $('select').formSelect();
-  });
-
-
-  $(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-
+/* modal pop up when delte button is pressed */
 
   $(document).ready(function(){
     $('.modal').modal();
   });
 
+  /* tool tip to add info on how to use image URL in add cocktail form */
 
    $(document).ready(function(){
     $('.tooltipped').tooltip();
   });
 
+/* google maps API */
 
 function initMap() {
         const bristol = { lat: 51.45347, lng: -2.58818 };
@@ -41,6 +31,7 @@ function initMap() {
   });
 }
 
+/* button to scroll to the top of the page after scrolling down a certain amount */
 
 mybutton = document.getElementById("myBtn");
 
@@ -59,12 +50,11 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-/* commented out emailJS code as makes map disappear - not sure why!? */
-/*function() {
-    emailjs.init('user_P9gB7l2oLHOlGUV26YW2y');
-}();
 
-window.onload = function() {
+
+/* emailJS - not working yet!*/
+
+/*window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 this.contact_number.value = Math.random() * 100000 | 0;
@@ -76,4 +66,10 @@ window.onload = function() {
                     });
             });
         }
-*/
+
+emailjs.send('gmail', 'onTheRocks', templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });*/
