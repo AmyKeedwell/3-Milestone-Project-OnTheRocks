@@ -54,22 +54,14 @@ function topFunction() {
 
 /* emailJS - not working yet!*/
 
-/*window.onload = function() {
+window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
-                this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('contact_service', 'contact_form', this)
+                emailjs.sendForm('gmail', 'onTheRocks', this)
                     .then(function() {
-                        console.log('SUCCESS!');
+                        console.log('SUCCESS!', response.status, response.text);
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
             });
         }
-
-emailjs.send('gmail', 'onTheRocks', templateParams)
-    .then(function(response) {
-       console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });*/

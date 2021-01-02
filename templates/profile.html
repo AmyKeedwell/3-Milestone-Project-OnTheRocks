@@ -34,16 +34,15 @@
                     </div>
                 </div>
                 <!--modal to check before deleting an item-->
-            <div id="modal-{{recipies._id}}" class="modal">
-                <div class="modal-content">
-                    <h5 class="text center-align">Are you sure you want to delete?</h5>
+                <div id="modal-{{recipies._id}}" class="modal">
+                    <div class="modal-content">
+                        <h5 class="text center-align">Are you sure you want to delete?</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
+                        <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <a href="{{ url_for('get_recipes', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
-                    <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
-                </div>
-            </div>
-
                 {% endfor %}
             </div>
             

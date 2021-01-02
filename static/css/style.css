@@ -5,10 +5,27 @@
     font-size: 30px;
 }
 
+@media only screen and (max-width: 300px) {
+  .logo {
+    font-size: 20px;
+  }
+}
+
 h2 {
     font-family: 'Monoton', cursive;
 }
 
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h2 {
+    font-size: 30px;
+  }
+}
 
 .hometext {
     font-family: 'Montserrat', sans-serif;
@@ -18,7 +35,6 @@ h2 {
 .text {
    font-family: 'Montserrat', sans-serif; 
 }
-
 
 nav {
     margin-bottom: 10vh;
@@ -42,7 +58,9 @@ body {background-image: url(../images/wall.jpg);
 }
 
 .btn-small{
-    margin: 5px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
 }
 
 .collapsible-header .col-9 strong {
