@@ -53,6 +53,10 @@ body {background-image: url(../images/wall.jpg);
     font-size: 2.5vh;
 }
 
+.search {
+    font-size: 10px;
+}
+
 .flashes h4 {
     line-height: 2;
 }
@@ -61,6 +65,7 @@ body {background-image: url(../images/wall.jpg);
     height: 25px;
     line-height: 25px;
     font-size: 13px;
+    margin: 2px;
 }
 
 .collapsible-header .col-9 strong {
