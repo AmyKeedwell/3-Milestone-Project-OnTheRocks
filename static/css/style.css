@@ -68,9 +68,8 @@ body {background-image: url(../images/wall.jpg);
     margin: 2px;
 }
 
-.collapsible-header .col-9 strong {
-    margin: 5px;
-    line-height: 42px;
+.btn {
+    margin: 2px;
 }
 
 #map {

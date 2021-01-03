@@ -33,6 +33,8 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
+            </div>
                 <!--modal to check before deleting an item-->
                 <div id="modal-{{recipies._id}}" class="modal">
                     <div class="modal-content">
@@ -43,9 +45,6 @@
                         <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-            
             <!--button to add a cocktail-->
             <div class="card-action center">
                 <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">Create New Cocktail Recipe</a>
