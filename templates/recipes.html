@@ -31,10 +31,10 @@
 
 <!--display all cocktail recipes-->
 {% if recipies|length > 0 %}
-{% for recipies in recipies %}
 <div class="row">
-    <div class="col s12 m4">
-        <div class="card">
+    {% for recipies in recipies %}
+    <div class="col s12 m6 l4">
+        <div class="card recipe-card">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="{{ recipies.url }}">
             </div>
@@ -75,6 +75,7 @@
                 {{ recipies.method }}
                 <p><em>by: {{ recipies.created_by }}</em></p>
         </div>
+    </div>
     </div>
     {% endfor %}
 </div>
