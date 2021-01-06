@@ -4,7 +4,7 @@
      $('.sidenav').sidenav({edge: "right"});
   });
 
-/* modal pop up when delte button is pressed */
+/* modal pop up */
 
   $(document).ready(function(){
     $('.modal').modal();
@@ -55,17 +55,17 @@ function topFunction() {
 /* emailJS - not working yet!*/
 
 window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                emailjs.sendForm('gmail', 'onTheRocks', this)
-                    .then(function(response) {
-                         console.log('SUCCESS!', response.status, response.text);
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-                document.getElementById("contact-form").reset();
-                return false;
-            });
-        }
-    
-        
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        $('.modal').modal('open');
+
+            event.preventDefault();
+            emailjs.sendForm('gmail', 'onTheRocks', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+            document.getElementById("contact-form").reset();
+            return false;
+    });
+}
