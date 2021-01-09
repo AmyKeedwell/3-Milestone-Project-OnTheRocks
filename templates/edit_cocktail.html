@@ -2,9 +2,8 @@
 {% block content %}
 
 
-<h2 class="center-align">Edit Your Cocktail Recipe</h2>
-
 <div class="row card-panel">
+    <h2 class="center-align">Edit Your Cocktail Recipe</h2>
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipies_id=recipies._id) }}">
         <div class="row">
             <div class="input-field col s12">
@@ -41,11 +40,11 @@
         <!--submit button-->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey">
+                <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3 white text">
                     Cancel
                     <i class="fas fa-times right"></i>
                 </a>
-                <button class="btn waves-effect waves-light grey" type="submit">Edit Cocktail
+                <button class="btn waves-effect waves-light grey darken-3 white text" type="submit">Edit Cocktail
                     <i class="fas fa-edit"></i>
                 </button>
             </div>
