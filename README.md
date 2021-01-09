@@ -6,6 +6,11 @@ The sites purpose is to display user created recipes that allows anyone to come 
 they would like to know how to make or to search any spirits they have in their house to see what can be made!
 
 My website allows users to interact with the page,they are able to Create, Read, Update and Delete recipes that they have added to the site. 
+This displays full CRUD functionailty. 
+
+You can view my deployed site [here](https://on-the-rocks-milestone3.herokuapp.com/home)
+
+You can view my GitHub Repositiory [here](https://github.com/AmyKeedwell/3-Milestone-Project-OnTheRocks)
 
 # UX
 
@@ -23,7 +28,8 @@ A user can:
 - log in as an existing user
 - log out of their account
 - view their profile page including a list of recipes they have added (if any)
-- allow users to edit or delete recipes they have added
+- allow users to edit recipes they have added
+- allow users to delete recipes they have added
 - contact us to make a reservation
 - find the location of the bar with the google maps to visit us
 
@@ -170,13 +176,34 @@ of the site. .
 - Figma
 
 # Testing
-HTML  W3C HTML Validator.
 
-CSS  W3C CSS Validator.
+Responsive Design in Dev Tools Tested responsiveness using google dev tools. I tested the following types:
+
+- iPhone 5/SE (320x568)
+- Galaxy S5/Moto G4 (360x640)
+- iPhone 6/7/8 (375x667)
+- iPhone X (375x812)
+- Pixel 2 (411x731)
+- Pixel 2 XL (411x823)
+- iPhone 6/7/8 Plus (414x736)
+- iPad (768x1024)
+- iPad Pro 1024x1366)
+
+HTML Validator.
+
+![HTML](README.img/html-validator.PNG)
+
+CSS Validator.
+
+![CSS](README.img/css-validator.PNG)
 
 JavaScript  JSHint Validator.
 
+![JS](README.img/js-hint.PNG)
+
 Python  PEP8 Validator.
+
+![Python](README.img/PEP8-validator.PNG)
 
 # Known Bugs
 Delete Button - deleting random recipes rather than the specific card it relates to - this was picked up via peer review as another student tested

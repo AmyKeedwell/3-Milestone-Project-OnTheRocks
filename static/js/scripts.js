@@ -35,7 +35,7 @@ function initMap() {
 
 mybutton = document.getElementById("myBtn");
 
-window.onscroll = function() {scrollFunction()}
+window.onscroll = function() {scrollFunction();};
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -52,7 +52,7 @@ function topFunction() {
 
 
 
-/* emailJS - not working yet!*/
+/* emailJS */
 
 window.onload = function() {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -68,4 +68,4 @@ window.onload = function() {
             document.getElementById("contact-form").reset();
             return false;
     });
-}
+};

@@ -45,7 +45,7 @@
             <li><a href="{{ url_for('location') }}">Location</a></li>
   </ul>
   <!--Flash messages-->
-    <section>
+    <div>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -55,7 +55,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-    </section>
+            </div>
 <!--templates-->
     <main class="container">
         {% block content %}
@@ -65,8 +65,8 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script type="text/javascript">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
    (function(){
       emailjs.init('user_P9gB7l2oLHOlGUV26YW2y');
    })();

@@ -36,7 +36,7 @@
     <div class="col s12 m6 l4">
         <div class="card recipe-card">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{ recipies.url }}">
+                <img class="activator" src="{{ recipies.url }}" alt="recipes">
             </div>
         <div class="card-content">
             <span class="card-title activator grey-text text-darken-4 center-align text">
@@ -52,6 +52,7 @@
                     <i class="far fa-trash-alt"></i>
                 </a>
             {% endif %}
+             <!--modal to check before deleting an item-->
             <div id="modal-{{recipies._id}}" class="modal">
                 <div class="modal-content">
                     <h5 class="text center-align">Are you sure you want to delete?</h5>
