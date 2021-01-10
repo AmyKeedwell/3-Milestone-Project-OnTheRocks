@@ -140,6 +140,7 @@ def add_cocktail():
 def edit_recipe(recipies_id):
     if request.method == "POST":
         submit = {
+            "url": request.form.get("url"),
             "cocktail_name": request.form.get("cocktail_name"),
             "ingredients": request.form.get("ingredients"),
             "method": request.form.get("method"),

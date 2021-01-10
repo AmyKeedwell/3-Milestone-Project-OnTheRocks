@@ -261,8 +261,6 @@ that recipe. When a user clicks on the green pencil edit button, they are redire
 auto filled with that recipe's information and the user can make any nessecary changes. They have the option to confirm these changes by clicking the 
 edit cocktail button which will save the changes and redirect them back to the recipes page, or click cancel which will redirect them back to the recipes page
 
-****FOUND ISSUE WHEN EDITING THAT IMAGE URL NO LONGER WORKS****
-
 ---
 
 ### Add a cocktail page (ONLY AVAILABLE TO REGISTERED USERS)
@@ -311,6 +309,16 @@ a reservation before filling out the form, nothing will send but they will get a
 all of the required fields, their email will be sucessfully sent and they will see a pop up 'Thank you for booking a reservation with us, we will be in touch
 to confirm your booking and look forward to seeing you!' once closed the page will reload and clear/refresh the form. 
 
+---
+
+## Sent to family and friends to test.
+
+I sent my deployed heroku link to friends and family to test the site, try it out and give me feedback. 
+- One issue flagged (although not directly an issue with the code itself) a friend attempted to add a cocktail to the site whilst using an iPad, he found that
+he was unable to upload a valid image url as was unable to copy image address from the iPad, he could add a cocktail with a filler fake url but it would not look 
+asthetically pleasing to have an image missing as this is the main part of the recipe card.
+- The same friend tried again on a desktop and found no issues at the time!
+    - In future versions I would look to replace the image url to a file finder, which I believe I will learn how to do in the Django module next! 
 
 ---
 
