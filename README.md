@@ -2,10 +2,10 @@
 
 I have created a cocktail recipe site to display my skills in HTML, CSS, JavaScript and Python.
 
-The sites purpose is to display user created recipes that allows anyone to come and search for a specific drink
+The sites purpose is to create and display user created recipes that allows anyone to come and search for a specific drink
 they would like to know how to make or to search any spirits they have in their house to see what can be made!
 
-My website allows users to interact with the page,they are able to Create, Read, Update and Delete recipes that they have added to the site. 
+My website allows users to interact with the page, they are able to Create, Read, Update and Delete recipes that they have added to the site. 
 This displays full CRUD functionailty. 
 
 You can view my deployed site [here](https://on-the-rocks-milestone3.herokuapp.com/home)
@@ -42,6 +42,7 @@ A user can:
 4. A user needing to see what ingredients go in a specific cocktail.
 5. A user curious of the correct way to make the cocktail.
 6. A bar or resturant owner looking to expand their cocktail menu.
+7. A user searching spirits they have for inspiration on what to make.
 
 First Time Visitor Goals
 - Greeted with a simple yet explanitory home page featuring the name of the site and a brief overview of the sites purpose.
@@ -57,10 +58,10 @@ user created cocktails
 - Log out
 
 Developer Goals
-- Demonstrate a solid understanding of MongoDB, Heroku and Python
-- Build an inviting, clean and useful cocktail recipe website
-- Make the site easy to use and navigate which provides a positive experience
-- Build up portfolio
+- Demonstrate a solid understanding of MongoDB, Heroku and Python.
+- Build an inviting, clean and useful cocktail recipe website.
+- Make the site easy to use and navigate which provides a positive experience.
+- Build up portfolio.
 
 Website Owner Goals
 - Have an easy-to-use site that encourages users to interact with it
@@ -160,7 +161,7 @@ I used recipes and the corresponding images from [BBC Good Food](https://www.bbc
 - Admin login will be implemented in the next release to allow admin users to edit or delete recipes added by an user,
 this is needed incase there are any recipes added with incorrect or inappropriate information, also to add missing information,
 for example if a user added a cocktail without a working image URL link which would effect the overall appearance
-of the site. .
+of the site.
 
 # Technologies Used
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -334,7 +335,9 @@ by changing the width of the Image Url bar on smaller screens, got it slightly b
 tooltip to sit next to the Image Url bar on smaller screens and for it to still be functional. May not be the best UX but it has the best
 functionality this way!
 ![tooltip](README.img/tooltip.PNG) ![tooltip](README.img/tooltip2.PNG)
-
+- During testing it was flagged to my attention that there was an issue with my delete button, it was not deleting the speific recipe that the card 
+was relating to, I found this as a fellow student added a receipe to test the site and when they tried to delete it, it removed one of my other recipes.
+This was very useful and allowed me to check my code, I found that my endfor loop has the incorrect positioning and was able to fix this issue. 
 
 ## Responsiveness
 
@@ -371,10 +374,6 @@ are coming from an Google Maps API and that needs this code to run.
 
 ![Python](README.img/PEP8-validator.PNG)
 
-# Known Bugs
-Delete Button - deleting random recipes rather than the specific card it relates to - this was picked up via peer review as another student tested
-my site to add their own recipes etc and when trying to then remove what they added - it deleted my other recipes.
-When i remove the modal to check if you want to delete, the button works fine, altho it is using the same code!
 
 # Deployment
 ## Project Creation
