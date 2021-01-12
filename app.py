@@ -20,18 +20,21 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+# Route decorator to navigate to the home page
 @app.route("/home")
 def home():
     return render_template("home.html")
 
 
 @app.route("/get_recipes")
+# Retrieve recipe information from the recipies dataabse in MongoDB
 def get_recipes():
     recipies = list(mongo.db.recipies.find())
     return render_template("recipes.html", recipies=recipies)
 
 
 @app.route("/search", methods=["GET", "POST"])
+# allow users find recipes via text search
 def search():
     query = request.form.get("query")
     recipies = list(mongo.db.recipies.find({"$text": {"$search": query}}))
@@ -99,6 +102,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
+        # display all recipies added by that user
         user = mongo.db.users.find_one({"username": session['user']})
         recipies = mongo.db.recipies.find({"created_by": session['user']})
         recipies = list(recipies)
@@ -120,6 +124,7 @@ def logout():
 
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
+    # takes user input to send to DB
     if request.method == "POST":
         recipies = {
             "url": request.form.get("url"),
@@ -128,7 +133,7 @@ def add_cocktail():
             "method": request.form.get("method"),
             "created_by": session["user"]
         }
-
+        # post users input to MongoDB
         mongo.db.recipies.insert_one(recipies)
         flash("New Cocktail Successfully Added!")
         return redirect(url_for("get_recipes"))
@@ -157,6 +162,7 @@ def edit_recipe(recipies_id):
 
 @app.route("/delete_cocktail/<recipies_id>")
 def delete_cocktail(recipies_id):
+    # delete input verified by MongoDB id
     mongo.db.recipies.remove({"_id": ObjectId(recipies_id)})
     flash("Cocktail Successfully Deleted!")
     return redirect(url_for("get_recipes"))
@@ -164,6 +170,7 @@ def delete_cocktail(recipies_id):
 
 @app.route("/location")
 def location():
+    # to navigate to location page from navbar
     return render_template("location.html")
 
 

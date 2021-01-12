@@ -34,7 +34,6 @@ function initMap() {
 /* button to scroll to the top of the page after scrolling down a certain amount */
 
 mybutton = document.getElementById("myBtn");
-
 window.onscroll = function() {scrollFunction();};
 
 function scrollFunction() {
@@ -50,10 +49,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-
-
 /* emailJS */
-
 window.onload = function() {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         $('.modal').modal('open');
