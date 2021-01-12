@@ -14,7 +14,7 @@ You can view my GitHub Repositiory [here](https://github.com/AmyKeedwell/3-Miles
 
 # UX
 
-![AmIResponsive](README.img/amiresponsive.PNG)
+![AmIResponsive](documentation/amiresponsive.PNG)
 
 As a cocktail lover, there are always new recipes to explore. This site allows users to search for a recipe they 
 would love to try, get inspiration by searching their favourite spirit in the search bar and see what new cocktails
@@ -68,19 +68,19 @@ Website Owner Goals
 
 # Mock Up
 Home Page
-![Home](README.img/wireframes/home.PNG)
+![Home](documentation/wireframes/home.PNG)
 Log In
-![login](README.img/wireframes/login.PNG)
+![login](documentation/wireframes/login.PNG)
 Register
-![Register](README.img/wireframes/register.PNG)
+![Register](documentation/wireframes/register.PNG)
 Recipes
-![Recipes](README.img/wireframes/recipes.PNG)
+![Recipes](documentation/wireframes/recipes.PNG)
 Add Cocktail
-![Add Recipe](README.img/wireframes/addcocktail.PNG)
+![Add Recipe](documentation/wireframes/addcocktail.PNG)
 Profile
-![Profile](README.img/wireframes/profile.PNG)
+![Profile](documentation/wireframes/profile.PNG)
 Location
-![Location](README.img/wireframes/location.PNG)
+![Location](documentation/wireframes/location.PNG)
 
 # Design
 ## Colour Scheme
@@ -99,7 +99,7 @@ This all contrasts well on the recipes and profile page where the colourful imag
 Throughout the site I used a combination of the two complimentary fonts below found on [Google Fonts](https://fonts.google.com/)
 
 ### Monoton 
-![Monoton](README.img/typograhy-monoton.PNG)
+![Monoton](documentation/typograhy-monoton.PNG)
 
 I loved the style of this font, it stands out and adds a bit of drama to the text while
 still being legible and easy to read.
@@ -111,7 +111,7 @@ Where is it used?
 
 ### Roboto Mono
 
-![Monoton](README.img/typograhy-roboto-mono.PNG)
+![Monoton](documentation/typograhy-roboto-mono.PNG)
 
 This font is simple but adds a little bit of personality, I feel it compliments the busy Monoton 
 font very well.
@@ -334,7 +334,7 @@ There were a few helpful errors flagged:
 by changing the width of the Image Url bar on smaller screens, got it slightly better but not 100%, there is not enough space for the
 tooltip to sit next to the Image Url bar on smaller screens and for it to still be functional. May not be the best UX but it has the best
 functionality this way!
-![tooltip](README.img/tooltip.PNG) ![tooltip](README.img/tooltip2.PNG)
+![tooltip](documentation/tooltip.PNG) ![tooltip](documentation/tooltip2.PNG)
 - During testing it was flagged to my attention that there was an issue with my delete button, it was not deleting the speific recipe that the card 
 was relating to, I found this as a fellow student added a receipe to test the site and when they tried to delete it, it removed one of my other recipes.
 This was very useful and allowed me to check my code, I found that my endfor loop has the incorrect positioning and was able to fix this issue. 
@@ -353,13 +353,47 @@ Responsive Design in Dev Tools Tested responsiveness using google dev tools. I t
 - iPad (768x1024)
 - iPad Pro 1024x1366)
 
+---
+
+## Testing User Stories
+1. Anyone looking to expand their knowledge on making cocktails or seeking inspiration to try something new.
+/A bar or resturant owner looking to expand their cocktail menu.
+    - In the example below it displays how a user can easily browse the recipes page to get inspiration on what 
+    creation to make next! The colourful cocktail images draw in the users attention, with a simple click of the 
+    image the card reveals the full name, ingredients and method in a simple easy to read black and white format.
+![testing user stories](documentation/testingux1.PNG)
+
+2. A user can use this to create their own library of recipes to refer back to.
+    - In the example below you can see an example of a users profile. This is their own personal library of cocktails
+    that they have added, they can use this to refer back to their old favourites, edit it they have found an even better
+    way to mix this cocktail and want to share this revolation with others. They can also delete the recipe completely 
+    if they no longer want it to be displayed on the website.
+    
+![testing user stories](documentation/testingux2.PNG)
+
+3. A user needing to see what ingredients go in a specific cocktail /curious of the correct way to make the cocktail.
+    - In the example below it displays how a user will see their chosen cocktail recipe, with a simple click of the 
+    image of the cocktail, they are presented with the card reveal. This is in a simple black and white design displaying
+    the name of the cocktail, the ingredients required to make the cocktail and the method required to make it. 
+
+![testing user stories](documentation/testingux3.PNG)
+
+7. A user searching spirits they have for inspiration on what to make. 
+    - In the example below I have searched vodka and the results show all current cocktails on the database that contain vodka. 
+    This will allow users to search for any spirits or mixers that they have in their cupboard and give them new ideas on what 
+    they can make!  
+
+![testing user stories](documentation/testingux4.PNG)
+
+---
+
 ### HTML Validator.
 
-![HTML](README.img/html-validator.PNG)
+![HTML](documentation/html-validator.PNG)
 
 ### CSS Validator.
 
-![CSS](README.img/css-validator.PNG)
+![CSS](documentation/css-validator.PNG)
 
 ### JavaScript  JSHint Validator.
 
@@ -368,11 +402,11 @@ Responsive Design in Dev Tools Tested responsiveness using google dev tools. I t
 There are some issues flagged with some variables within my JS, these variables such as google for example
 are coming from an Google Maps API and that needs this code to run.
 
-![JS](README.img/js-hint.PNG)
+![JS](documentation/js-hint.PNG)
 
 ### Python PEP8 Validator.
 
-![Python](README.img/PEP8-validator.PNG)
+![Python](documentation/PEP8-validator.PNG)
 
 
 # Deployment
