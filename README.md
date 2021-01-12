@@ -355,6 +355,18 @@ Responsive Design in Dev Tools Tested responsiveness using google dev tools. I t
 
 ---
 
+## Error Codes
+
+I added custom error code pages for 404 and 500 errors to keep them on theme with the site and more user friendly redirecting them back 
+to safety.
+
+- 404 - I tested the 404 error code by adding an unrecognised element on the end of my URL which successfully.
+- 500 - I was unable to test this code works as am unable to replicate a server issue but believe this should work.
+
+![404 error](documentation/404.PNG)
+
+---
+
 ## Testing User Stories
 1. Anyone looking to expand their knowledge on making cocktails or seeking inspiration to try something new.
 /A bar or resturant owner looking to expand their cocktail menu.
@@ -378,7 +390,7 @@ Responsive Design in Dev Tools Tested responsiveness using google dev tools. I t
 
 ![testing user stories](documentation/testingux3.PNG)
 
-7. A user searching spirits they have for inspiration on what to make. 
+4. A user searching spirits they have for inspiration on what to make. 
     - In the example below I have searched vodka and the results show all current cocktails on the database that contain vodka. 
     This will allow users to search for any spirits or mixers that they have in their cupboard and give them new ideas on what 
     they can make!  
@@ -463,6 +475,9 @@ Scroll to top code found: https://www.w3schools.com/howto/howto_js_scroll_to_top
 Pre added receipes found on https://www.bbcgoodfood.com/recipes/collection/cocktail-recipes
 
 Secret key generated from https://randomkeygen.com/
+
+Error code template found here https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+
 
 
 
