@@ -53,7 +53,6 @@ body {background-image: url(../images/wall.jpg);
     font-size: 2vh;
 }
 
-
 .search {
     font-size: 10px;
 }
@@ -66,7 +65,6 @@ body {background-image: url(../images/wall.jpg);
     min-height: 350px; 
 }
 
-
 @media only screen and (max-width: 1400px) {
   .profile-card {
      min-height: 325px;
@@ -74,7 +72,7 @@ body {background-image: url(../images/wall.jpg);
 }
 
 .recipe-card {
-   min-height: 500px;  
+   min-height: 550px;  
 }
 
 @media only screen and (max-width: 1400px) {
@@ -103,6 +101,7 @@ body {background-image: url(../images/wall.jpg);
   height: 400px;
   width: 100%;
 }
+
 
 #myBtn {
   display: none;

@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
-    <title>On The Rocks!</title>
-</head>
-<body>
-<!--nav bar-->
-<nav>
-    <div class="nav-wrapper grey">
-      <a href="{{ url_for('home') }}" class="logo">On The Rocks</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{{ url_for('home') }}" class="nav-item">Home</a></li>
-        <li><a href="{{ url_for('get_recipes') }}" class="nav-item">Recipes</a></li>
-        {% if session.user %}
-            <li><a href="{{ url_for('add_cocktail') }}" class="nav-item">Add Your Own Cocktail</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-item">Profile</a></li>
-            <li><a href="{{ url_for('logout') }}" class="nav-item">Log Out</a></li>
-        {% else %}
-            <li><a href="{{ url_for('login') }}" class="nav-item">Log In</a></li>
-            <li><a href="{{ url_for('register') }}" class="nav-item">Register</a></li>
-        {% endif %}
-            <li><a href="{{ url_for('location') }}" class="nav-item">Location</a></li>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+      <title>On The Rocks!</title>
+   </head>
+   <body>
+      <!--nav bar-->
+      <nav>
+         <div class="nav-wrapper grey">
+            <a href="{{ url_for('home') }}" class="logo">On The Rocks</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+               <li><a href="{{ url_for('home') }}" class="nav-item">Home</a></li>
+               <li><a href="{{ url_for('get_recipes') }}" class="nav-item">Recipes</a></li>
+               {% if session.user %}
+               <li><a href="{{ url_for('add_cocktail') }}" class="nav-item">Add Your Own Cocktail</a></li>
+               <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-item">Profile</a></li>
+               <li><a href="{{ url_for('logout') }}" class="nav-item">Log Out</a></li>
+               {% else %}
+               <li><a href="{{ url_for('login') }}" class="nav-item">Log In</a></li>
+               <li><a href="{{ url_for('register') }}" class="nav-item">Register</a></li>
+               {% endif %}
+               <li><a href="{{ url_for('location') }}" class="nav-item">Location</a></li>
+            </ul>
+         </div>
+      </nav>
+      <!--mobile nav bar-->
+      <ul class="sidenav" id="mobile-demo">
+         <li><a href="{{ url_for('home') }}">Home</a></li>
+         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+         {% if session.user %}
+         <li><a href="{{ url_for('add_cocktail') }}">Add Your Own Cocktail</a></li>
+         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+         {% else %}
+         <li><a href="{{ url_for('login') }}">Log In</a></li>
+         <li><a href="{{ url_for('register') }}">Register</a></li>
+         {% endif %}
+         <li><a href="{{ url_for('location') }}">Location</a></li>
       </ul>
-    </div>
-  </nav>
-<!--mobile nav bar-->
-  <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-        {% if session.user %}
-            <li><a href="{{ url_for('add_cocktail') }}">Add Your Own Cocktail</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-        {% else %}
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-        {% endif %}
-            <li><a href="{{ url_for('location') }}">Location</a></li>
-  </ul>
-  <!--Flash messages-->
-    <div>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="grey center-align white-text">{{ message }}</h4>
-                </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-            </div>
-<!--templates-->
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
-<!--scroll to top button-->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script>
-   (function(){
-      emailjs.init('user_P9gB7l2oLHOlGUV26YW2y');
-   })();
-</script> 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6c6vXtzTBGL6gaYFSmZ0N6I09pjY6YWk&callback=initMap&libraries=&v=weekly"></script>      
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>  
-</body>
+      <!--Flash messages-->
+      <div>
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         {% for message in messages %}
+         <div class="row flashes">
+            <h4 class="grey center-align white-text">{{ message }}</h4>
+         </div>
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+      </div>
+      <!--templates-->
+      <main class="container">
+         {% block content %}
+         {% endblock %}
+      </main>
+      <!--scroll to top button-->
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+      <script>
+         (function(){
+            emailjs.init('user_P9gB7l2oLHOlGUV26YW2y');
+         })();
+      </script> 
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6c6vXtzTBGL6gaYFSmZ0N6I09pjY6YWk&callback=initMap&libraries=&v=weekly"></script>      
+      <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>  
+   </body>
 </html>

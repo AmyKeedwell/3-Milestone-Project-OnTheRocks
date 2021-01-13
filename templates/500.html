@@ -2,19 +2,21 @@
 {% block content %}
 
 <div class="container valign-wrapper">
-    <div class="row">
-        <div class="col s10 offset-s1 valign">
-        <div class="card">
+   <div class="row">
+      <div class="col s10 offset-s1 valign">
+         <div class="card">
             <div class="card-content">
-                <div class="card-title logo center"><h1>Internal Server Error!</h1></div>
-                <p class="hometext center-align">Sorry, looks like something is wrong our end, while we try to fix this, click below to return home! </p>
+               <div class="card-title logo center">
+                  <h1>Internal Server Error!</h1>
+               </div>
+               <p class="hometext center-align">Sorry, looks like something is wrong our end, while we try to fix this, click below to return home! </p>
             </div>
             <div class="card-action center">
-                <a href="{{ url_for('home') }}" class="white-text grey darken-3 waves-effect waves-light btn">Go back home</a>
+               <a href="{{ url_for('home') }}" class="white-text grey darken-3 waves-effect waves-light btn">Go back home</a>
             </div>
-        </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
 </div>
 
 {% endblock %}

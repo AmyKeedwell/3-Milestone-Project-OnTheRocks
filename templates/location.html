@@ -2,43 +2,38 @@
 {% block content %}
 
 <div class="card-panel">
-    <h2 class="center-align">Find us here!</h2>
-<!--Google maps API-->
-    <div id="map"></div>
-    <br>
-    <h3 class="text center-align">Contact Us</h3>
-    <p class="center-align text">Reserve a seat in our river side bar to recieve the full table service experience!</p>
-<!--Contact form to make a reservation--> 
-    <form id="contact-form" class="col s12">
-        <input type="hidden" name="contact_number">
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" class="validate" required>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" class="validate" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" class="validate" required></textarea>
-        <div class="card-action center white-text">
-            <button type="submit" class="btn modal-trigger waves-effect waves-light white-text grey darken-3">
-                Make A Reservation
-                <i class="fas fa-glass-cheers"></i>
-            </button> 
-            <!--<a class="waves-effect waves-light white-text grey darken-3 btn modal-trigger" href="#">
-                 Make A Reservation
-                <i class="fas fa-glass-cheers"></i>
-            </a>-->
-        </div>
-    </form>
+   <h2 class="center-align">Find us here!</h2>
+   <!--Google maps API-->
+   <div id="map"></div>
+   <br>
+   <h3 class="text center-align">Contact Us</h3>
+   <p class="center-align text">Reserve a seat in our river side bar to recieve the full table service experience!</p>
+   <!--Contact form to make a reservation--> 
+   <form id="contact-form" class="col s12">
+      <input type="hidden" name="contact_number">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" class="validate" required>
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" class="validate" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" class="validate" required></textarea>
+      <div class="card-action center white-text">
+         <button type="submit" class="btn modal-trigger waves-effect waves-light white-text grey darken-3">
+         Make A Reservation
+         <i class="fas fa-glass-cheers"></i>
+         </button> 
+      </div>
+   </form>
 </div>
 <!--Modal to confirm reservation email has been sent-->
 <div id="modal1" class="modal">
-    <div class="modal-content text center-align">
+   <div class="modal-content text center-align">
       <h4>Thank you for your booking a reservation with us!</h4>
       <p>We will be in touch to confirm your booking and look forward to seeing you!</p>
-    </div>
-    <div class="modal-footer">
+   </div>
+   <div class="modal-footer">
       <a href="{{ url_for('location') }}" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-
+   </div>
+</div>
 
 {% endblock %}

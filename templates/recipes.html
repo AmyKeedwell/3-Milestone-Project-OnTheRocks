@@ -3,88 +3,87 @@
 
 <!--search bar-->
 <div class="row card-panel">
-    <h2 class="center-align">View our recipes and create your own!</h2>
-    <form action="{{ url_for('search') }}" method="post" class="col s12">
-        <div class="row center-align">
-            <div class="input-field col s12 m8">
-                <i class="fas fa-search prefix"></i>
-                <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                <label for="query">Search your favourite tipple...</label>
-            </div>
-            <div class="col s12 m4">
-                <a href="{{ url_for('get_recipes') }}" class="btn white-text grey darken-3 waves-effect waves-light">Clear</a>
-                <button type="submit" class="btn white-text grey darken-3 waves-effect waves-light">
-                    <i class="fas fa-search left"></i>Search
-                </button>
-            </div>
-        </div>
-<!--button to create a new cocktail-->
-        {% if session.user %}
-        <div class="card-action center">
-            <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">
-                Create New Cocktail Recipe
-            </a>
-        </div>
-        {% endif %}
-    </form>
+   <h2 class="center-align">View our recipes and create your own!</h2>
+   <form action="{{ url_for('search') }}" method="post" class="col s12">
+      <div class="row center-align">
+         <div class="input-field col s12 m8">
+            <i class="fas fa-search prefix"></i>
+            <input type="text" name="query" id="query" minlength="3" class="validate" required>
+            <label for="query">Search your favourite tipple...</label>
+         </div>
+         <div class="col s12 m4">
+            <a href="{{ url_for('get_recipes') }}" class="btn white-text grey darken-3 waves-effect waves-light">Clear</a>
+            <button type="submit" class="btn white-text grey darken-3 waves-effect waves-light">
+            <i class="fas fa-search left"></i>Search
+            </button>
+         </div>
+      </div>
+      <!--button to create a new cocktail-->
+      {% if session.user %}
+      <div class="card-action center">
+         <a href="{{ url_for('add_cocktail') }}" class="white-text grey darken-3 waves-effect waves-light btn center-align">
+         Create New Cocktail Recipe
+         </a>
+      </div>
+      {% endif %}
+   </form>
 </div>
-
 <!--display all cocktail recipes-->
 {% if recipies|length > 0 %}
 <div class="row">
-    {% for recipies in recipies %}
-    <div class="col s12 m6 l4">
-        <div class="card recipe-card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{{ recipies.url }}" alt="recipes">
-            </div>
-        <div class="card-content">
+   {% for recipies in recipies %}
+   <div class="col s12 m6 l4">
+      <div class="card recipe-card">
+         <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{ recipies.url }}" alt="recipes">
+         </div>
+         <div class="card-content">
             <span class="card-title activator grey-text text-darken-4 center-align text">
-                <strong>{{ recipies.cocktail_name }}</strong>
+            <strong>{{ recipies.cocktail_name }}</strong>
             </span>
             <p class="center-align text">Click image to see the recipe!</p>
             <br>
             {% if session.user|lower == recipies.created_by|lower %}
-                <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small green waves-effect waves-light">
-                    <i class="fas fa-pencil-alt"></i>
-                </a>
-                <a class="btn-small red modal-trigger right" href="#modal-{{recipies._id}}">
-                    <i class="far fa-trash-alt"></i>
-                </a>
+            <a href="{{ url_for('edit_recipe', recipies_id=recipies._id ) }}" class="btn-small green waves-effect waves-light">
+            <i class="fas fa-pencil-alt"></i>
+            </a>
+            <a class="btn-small red modal-trigger right" href="#modal-{{recipies._id}}">
+            <i class="far fa-trash-alt"></i>
+            </a>
             {% endif %}
-             <!--modal to check before deleting an item-->
+            <!--modal to check before deleting an item-->
             <div id="modal-{{recipies._id}}" class="modal">
-                <div class="modal-content">
-                    <h5 class="text center-align">Are you sure you want to delete?</h5>
-                </div>
-                <div class="modal-footer">
-                    <a href="{{ url_for('get_recipes', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
-                    <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
-                </div>
+               <div class="modal-content">
+                  <h5 class="text center-align">Are you sure you want to delete?</h5>
+               </div>
+               <div class="modal-footer">
+                  <a href="{{ url_for('get_recipes', username=session['user']) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Cancel</a>
+                  <a href="{{ url_for('delete_cocktail', recipies_id=recipies._id ) }}" class="btn-small white-text grey darken-3 waves-effect waves-light">Delete</a>
+               </div>
             </div>
-        </div>
-        <div class="card-reveal">
+         </div>
+         <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><strong>{{ recipies.cocktail_name }}</strong>
-                <i class="fas fa-times right"></i>
+            <i class="fas fa-times right"></i>
             </span>
-                <strong>Ingredients:</strong>
-                <br>
-                {{ recipies.ingredients }}
-                <br>
-                <strong>Method:</strong>
-                <br>
-                {{ recipies.method }}
-                <p><em>by: {{ recipies.created_by }}</em></p>
-        </div>
-    </div>
-    </div>
-    {% endfor %}
+            <strong>Ingredients:</strong>
+            <br>
+            {{ recipies.ingredients }}
+            <br>
+            <strong>Method:</strong>
+            <br>
+            {{ recipies.method }}
+            <p><em>by: {{ recipies.created_by }}</em></p>
+         </div>
+      </div>
+   </div>
+   {% endfor %}
 </div>
 {% else %}
-    <h3 class="center-align red-text text">No Cocktails Found!</h3>
-    {% if session.user %}
-        <h5 class="center-align text"> Create this Cocktail? Simply click the link above!</h5>
-        {% endif %}
+<h3 class="center-align red-text text">No Cocktails Found!</h3>
+{% if session.user %}
+<h5 class="center-align text"> Create this Cocktail? Simply click the link above!</h5>
+{% endif %}
 {% endif %}
         
 {% endblock %}
