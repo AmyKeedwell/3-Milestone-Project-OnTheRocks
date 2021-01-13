@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap');
 
+
+/*----------typography styling across all pages---------*/
+
 .logo {
     font-family: 'Monoton', cursive;
     font-size: 30px;
@@ -27,13 +30,15 @@ h2 {
   }
 }
 
+.text {
+   font-family: 'Montserrat', sans-serif; 
+}
+
+/*----------home page---------*/
+
 .hometext {
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
-}
-
-.text {
-   font-family: 'Montserrat', sans-serif; 
 }
 
 nav {
@@ -57,9 +62,13 @@ body {background-image: url(../images/wall.jpg);
     font-size: 10px;
 }
 
+/*---------flashes---------*/
+
 .flashes h4 {
     line-height: 2;
 }
+
+/*----------profile and recipe card styling---------*/
 
 .profile-card {
     min-height: 350px; 
@@ -86,6 +95,8 @@ body {background-image: url(../images/wall.jpg);
     margin-bottom: 10px;
 }
 
+/*----------buttons---------*/
+
 .btn-small{
     height: 25px;
     line-height: 25px;
@@ -97,11 +108,14 @@ body {background-image: url(../images/wall.jpg);
     margin: 2px;
 }
 
+/*----------google maps API---------*/
+
 #map {
   height: 400px;
   width: 100%;
 }
 
+/*----------scroll to top button---------*/
 
 #myBtn {
   display: none;
